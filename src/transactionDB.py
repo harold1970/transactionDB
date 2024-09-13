@@ -4,19 +4,18 @@ import time
 import json
 import color
 import hashlib
-# first commit works
 
 customers = {}
 transactions = {}
 
 
-with open("names.txt", "r") as f:
+with open(r"src\names.txt", "r") as f:
     file = f.read()
     names = file.split("\n")
-with open("payment_options.txt", "r") as f:
+with open(f"src\payment_options.txt", "r") as f:
     file = f.read()
     options = file.split("\n")
-with open("menu.json", "r") as f:
+with open(r"src\menu.json", "r") as f:
     menu = json.load(f)
     print(menu)
 
@@ -56,7 +55,7 @@ password = input("please enter password>> ")
 userinput = password.encode()
 
 # Read the stored password hash from the file
-with open("password.txt", "r") as f:
+with open(r"src\password.txt", "r") as f:
     stored_hash = f.read().strip()
 
 # Hash the user input
