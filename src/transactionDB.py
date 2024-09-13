@@ -5,6 +5,7 @@ import json
 # broken, get someone to fix --finnh 9/12/24
 import color
 import hashlib
+# first commit works
 
 customers = {}
 transactions = {}
