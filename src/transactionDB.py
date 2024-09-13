@@ -2,7 +2,6 @@ import users
 import random
 import time
 import json
-# broken, get someone to fix --finnh 9/12/24
 import color
 import hashlib
 # first commit works
@@ -21,15 +20,16 @@ with open("menu.json", "r") as f:
     menu = json.load(f)
     print(menu)
 
+
 def error(message):
     print(f"{color.bcolors.FAIL}{message}{color.bcolors.ENDC}")
+
 
 
 for i in range(1000):
     customers[i] = users.Customer(random.choice(names), i, 0,0, random.choice(options),0)
 
-# for i in range(1000):
-#     print(customers[i].name, " | ", customers[i].id, " | ", customers[i].PPO )
+
 
 for i in range(10000):                           #id                                 date                                                                                       time                                                                               
     transactions[i] = users.Transaction(f"T{i*1000000000}", f"{random.randint(0,99)}{random.randint(0,99)}/{random.randint(0,12)}/{random.randint(0,31)}", time.gmtime(), random.randint(0,999), [], 0, random.randint(10,25))
@@ -46,8 +46,7 @@ for i in range(10000):                           #id                            
         customers[transactions[i].customerId].points += len(transactions[i].itemsOrdered)
         # add the transaction total to customer total
         customers[transactions[i].customerId].total += transactions[i].total
-# for i in range(999):
-#     print(transactions[i].transactionId," | ", transactions[i].customerId," | ", transactions[i].total)
+
 
 found_users = {} 
 commands = ["list", "search", "get", "exit", "help"]
