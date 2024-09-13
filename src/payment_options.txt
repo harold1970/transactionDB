@@ -1,0 +1,6 @@
+mastercard
+vista
+applePay
+androidPay
+check
+cash
